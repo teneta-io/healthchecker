@@ -15,9 +15,9 @@ RUN export BLDDIR=/go/bin && \
 
 RUN ls -al /go/bin/
 
-FROM alpine
+FROM scratch AS export-stage
 
-WORKDIR /app
+#WORKDIR /app
 
 COPY --from=build /go/bin/ ./
 CMD ["./healthchecker"]
